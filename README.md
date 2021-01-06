@@ -56,6 +56,7 @@ npm start
 ```
 - Criar um usuário:
 ```graphql
+    mutation {
     createUser(data: {
         firstname: "Sponge"
         lastname: "Bob"
