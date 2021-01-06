@@ -18,13 +18,13 @@
 
 ## Como Rodar o programa
 - Primeiro, instale todos os pacotes utilizando:
-        - npm install
+         npm install
 - Depois, rode o codigo utilizando:
-        - npm start
+         npm start
 
 ## Exemplo de queries e mutations
 Selecionar todos os usuários:
-    - query {
+    query {
         users {
         id
   	    firstname
@@ -35,7 +35,7 @@ Selecionar todos os usuários:
   }
 }
 Selecionar usuário por id:
-    - query {
+    query {
         user(id: "2") {
         id
         firstname
@@ -46,7 +46,7 @@ Selecionar usuário por id:
   }
 }
  Criar um usuário:
-    - createUser(data: {
+    createUser(data: {
         firstname: "Sponge"
         lastname: "Bob"
         nickname: "bobesponja"
@@ -64,7 +64,7 @@ Selecionar usuário por id:
   }
 }
 Editar usuário:
-    - mutation {
+    mutation {
         updateUser(
         id: "2", 
         data: {
