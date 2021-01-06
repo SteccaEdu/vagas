@@ -1,29 +1,35 @@
 # Desafio Salestime - NodeJS
 ## Requisitos
-- NodeJS (12.X.X)
-- TypeScript(3.X.X)
-- NPM (6.X.X)
+* NodeJS (12.X.X)
+* TypeScript(3.X.X)
+* NPM (6.X.X)
 
 ## Dependencias
-- "dependencies": {
-- "apollo-server": "^2.19.1",
-- "class-validator": "^0.12.2",
-- "graphql": "^15.4.0",
-- "reflect-metadata": "^0.1.13",
-- "sqlite3": "^5.0.0",
-- "type-graphql": "^1.1.1",
-- "typeorm": "^0.2.29",
-- "typeorm-encrypted": "^0.5.6"
-}
+```bash
+ "dependencies": {
+ "apollo-server": "^2.19.1",
+ "class-validator": "^0.12.2",
+ "graphql": "^15.4.0",
+ "reflect-metadata": "^0.1.13",
+ "sqlite3": "^5.0.0",
+ "type-graphql": "^1.1.1",
+ "typeorm": "^0.2.29",
+ "typeorm-encrypted": "^0.5.6"
+ }
+```
 
 ## Como Rodar o programa
 - Primeiro, instale todos os pacotes utilizando:
-         npm install
+```bash
+npm install
+```
 - Depois, rode o codigo utilizando:
-         npm start
-
+```bash 
+npm start
+```
 ## Exemplo de queries e mutations
-Selecionar todos os usuários:
+- Selecionar todos os usuários:
+```graphql
     query {
         users {
         id
@@ -34,6 +40,7 @@ Selecionar todos os usuários:
         password
   }
 }
+```
 Selecionar usuário por id:
     query {
         user(id: "2") {
@@ -82,6 +89,6 @@ Editar usuário:
 }
 
 Deletar um usuário:
-    - mutation {
+    mutation {
         deleteUser(id: "3")
-        }
+    }
