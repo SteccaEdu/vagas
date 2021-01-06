@@ -65,12 +65,12 @@ npm start
   })
   
   {
-    id
-    first name
-    last name
-    nickname
-    email
-    password
+        id
+        first name
+        last name
+        nickname
+        email
+        password
   }
 }
 ```
@@ -81,7 +81,7 @@ npm start
         id: "2", 
         data: {
     	nickname: "Patrick"
-  	})
+    })
 
     {
         id
@@ -98,4 +98,4 @@ npm start
     mutation {
         deleteUser(id: "3")
     }
-    ```
+```
