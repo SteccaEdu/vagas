@@ -33,7 +33,7 @@ npm start
     query {
         users {
         id
-  	    firstname
+        firstname
         lastname
         nickname
         email
@@ -41,7 +41,8 @@ npm start
   }
 }
 ```
-Selecionar usuário por id:
+- Selecionar usuário por id:
+```graphql 
     query {
         user(id: "2") {
         id
@@ -52,7 +53,9 @@ Selecionar usuário por id:
         password
   }
 }
- Criar um usuário:
+```
+- Criar um usuário:
+```graphql
     createUser(data: {
         firstname: "Sponge"
         lastname: "Bob"
@@ -70,7 +73,9 @@ Selecionar usuário por id:
     password
   }
 }
-Editar usuário:
+```
+- Editar usuário:
+```graphql
     mutation {
         updateUser(
         id: "2", 
@@ -87,8 +92,10 @@ Editar usuário:
         password
     }
 }
-
-Deletar um usuário:
+```
+- Deletar um usuário:
+```graphql
     mutation {
         deleteUser(id: "3")
     }
+    ```
