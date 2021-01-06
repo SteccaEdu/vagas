@@ -1,13 +1,54 @@
 // backend/src/resolvers/user_resolver.ts
 
-import { Resolver, Query } from "type-graphql";
+import { Resolver, Query, Mutation, Arg } from "type-graphql";
+import { User } from '../models/user';
+import { CreateUserInput } from '../inputs/create_user_input';
+import { UpdateUserInput } from '../inputs/update_user_input';
 
 
 @Resolver()
 export class UserResolver {
 
-  @Query(() => String)
-  hello() {
-    return "world :)))))";
+  @Query(() => [User])
+  users() {
+    return User.find();
+  }
+
+  @Query(() => User)
+  user(@Arg("id") id: string) {
+    return User.findOne({ where: { id }});
+  }
+
+  @Mutation(() => User)
+  async createUser(@Arg("data") data: CreateUserInput) {
+    const user = User.create(data);
+    await user.save();
+    return user;
+  }
+
+  @Mutation(() => User)
+  async updateUser(@Arg("id") id: string, @Arg("data") data: UpdateUserInput) {
+    const user = await User.findOne({ where: { id }});
+
+    if (!user) {
+      throw new Error(`O usuario com o id: ${id} não existe!`);
+    }
+
+    Object.assign(user, data);
+    await user.save();
+
+    return user;
+  }
+
+  @Mutation(() => Boolean)
+  async deleteUser(@Arg("id") id: string) {
+    const user = await User.findOne({ where: { id }});
+
+    if (!user) {
+      throw new Error(`O usuario com o id: ${id} não existe!`);
+    }
+
+    await user.remove();
+    return true;
   }
 }

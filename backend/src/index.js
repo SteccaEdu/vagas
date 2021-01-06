@@ -13,6 +13,6 @@ async function runServer() {
     });
     const server = new apollo_server_1.ApolloServer({ schema });
     await server.listen(8050);
-    console.log('Server started at port ::8050');
+    console.log('Servidor iniciado na porta ::8050');
 }
 runServer();
